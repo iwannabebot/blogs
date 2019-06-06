@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:image" content="{{ image }}" />
+    <link rel="stylesheet" href="../blogs.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@4"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    <script>
+      if (!SVGElement.prototype.contains) {
+        SVGElement.prototype.contains = HTMLDivElement.prototype.contains;
+      }
+    </script>
+    <script>
+      window.onload = function(ev) {
+        const pres = document.getElementsByTagName("code");
+        for (let i = 0; i < pres.length; i++) {
+          if (pres[i].parentElement.tagName.toLowerCase() === "pre") {
+            var el = document.createElement("button");
+            el.className = "btn";
+            el.innerHTML = '<i class="fa fa-clipboard"></i>';
+            el.setAttribute("data-clipboard-target", "#_code" + i);
+            el.setAttribute("data-clipboard-action", "copy");
+            el.onclick = function(e) {};
+            pres[i].parentElement.appendChild(el);
+            pres[i].id = "_code" + i;
+          }
+        }
+        const as = document.getElementsByTagName("a");
+        for (let i = 0; i < as.length; i++) {
+            as[i].setAttribute("data-tippy-content", as[i]["href"]);
+        }
+        // TIPPY
+        const instances = tippy(".btn", {
+          content: "Copied to Clipboard",
+          duration: 1000,
+          arrow: true,
+          arrowType: "round", // or 'sharp' (default)
+          animation: "fade",
+          trigger: "click",
+          theme: 'light'
+        });
+        var clipboard = new ClipboardJS(".btn");
+      };
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <a href="https://www.nilayvishwakarma.com"><span>@nilayvishwakarma.com</span></a>
+      <a href="../blogs.html"><span>Blogs</span></a>
+      <a href="../tools.html"><span>Tools</span></a>
+    </div>
+    <div class="sub-header">
+      <a class="right" href="https://github.com/iwannabebot/nakaab/edit/master/{{md-location}}"><span>Edit</span></a>
+      <a class="right" href="./syntax.html"><span>Syntax</span></a>
+      <a class="right" href="https://github.com/iwannabebot/nakaab/issues/new?title=Found an issue in {{title}}"><span>Report errors?</span></a>
+    </div>
+    <div class="container">
+      {{ body }}
+      <p class="footer">-- Published : {{ published }}</p>
+    </div>
+  </body>
+</html>

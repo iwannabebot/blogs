@@ -1,0 +1,40 @@
+{
+  "name": "blogs",
+  "version": "1.0.0",
+  "description": "A repository for blogs.nilayvishwakarma.com",
+  "main": "transpiled/index.js",
+  "scripts": {
+    "dev": "concurrently \"tsc -w\" \"nodemon\" \"live-server wwwroot\"",
+    "ci": "npm run build && npm run publish",
+    "build": "rimraf wwwroot && rimraf transpiled && tsc && node transpiled/index.js",
+    "publish": "gh-pages -d wwwroot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iwannabebot/blogs.git"
+  },
+  "author": "iwannabebot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iwannabebot/blogs/issues"
+  },
+  "homepage": "https://github.com/iwannabebot/blogs#readme",
+  "devDependencies": {
+    "@types/highlight.js": "^9.12.3",
+    "@types/node": "^12.0.4",
+    "@types/node-sass": "^4.11.0",
+    "@types/rimraf": "^2.0.2",
+    "@types/showdown": "^1.9.3",
+    "concurrently": "^4.1.0",
+    "forever": "^1.0.0",
+    "gh-pages": "^2.0.1",
+    "highlight.js": "^9.15.8",
+    "live-server": "^1.2.1",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1",
+    "rimraf": "^2.6.3",
+    "showdown": "^1.9.0",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.5.1"
+  }
+}

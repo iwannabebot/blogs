@@ -1,0 +1,22 @@
+{
+    "restartable": "rs",
+    "ignore": [
+      ".git",
+      "node_modules/**/node_modules"
+    ],
+    "verbose": true,
+    "exec": "node transpiled/index.js",
+    "execMap": {
+      "js": "node --harmony"
+    },
+    "events": {
+      "restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
+    },
+    "watch": [
+        "blogs", "tools", "view", "images", "transpiled", "scss"
+    ],
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "ext": "js,json,md,html,scss"
+  }

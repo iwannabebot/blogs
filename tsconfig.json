@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "transpiled",
+    "sourceMap": true,
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": false,
+    "removeComments": false,
+    "noImplicitAny": true,
+    "declaration": true,
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"]
+  },
+  "include": ["devops"],
+  "exclude": ["transpiled", "node_modules", "test"]
+}
