@@ -5,9 +5,7 @@
   "main": "transpiled/index.js",
   "scripts": {
     "dev": "concurrently \"tsc -w\" \"nodemon\" \"live-server wwwroot\"",
-    "ci": "npm run build && npm run publish",
-    "build": "rimraf wwwroot && rimraf transpiled && tsc && node transpiled/index.js",
-    "publish": "gh-pages -d wwwroot"
+    "build": "rimraf wwwroot && rimraf transpiled && tsc && node transpiled/index.js"
   },
   "repository": {
     "type": "git",

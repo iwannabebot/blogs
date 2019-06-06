@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - "stable"
+env:
+  - NODE_ENVIRONMENT= $NODE_ENVIRONMENT
+  # - MEDIUM_APP_ID= $MEDIUM_APP_ID
+  # - MEDIUM_APP_KEY= $MEDIUM_APP_KEY
+  # - MEDIUM_INTEGRATION_KEY= $MEDIUM_INTEGRATION_KEY
+cache:
+  directories:
+  - node_modules
+script:
+  - npm run build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: wwwroot
+  on:
+    branch: master
