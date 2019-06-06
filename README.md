@@ -1,1 +1,1 @@
-[##Blogs](https://blogs.nilayvishwakara.com)
+## [Blogs](https://www.nilayvishwakara.com/blogs)
