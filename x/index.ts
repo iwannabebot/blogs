@@ -13,8 +13,8 @@ try {
 [{
   folder: "images"
 }].forEach(siteConfig => {
-  fHelper.ReadDir(siteConfig.folder).forEach(file => {
-    fHelper.Copy(siteConfig.folder, file, ",", "wwwroot", siteConfig.folder, file)
+  fHelper.ReadDirPath(siteConfig.folder).forEach(file => {
+    fHelper.Copy(file, ",", "wwwroot", file)
   })
 });
 
@@ -30,7 +30,7 @@ try {
 ["perspective", "tech", ].forEach(folder => {
   try {
     const template = fHelper.ReadText("view/partials/_"+folder+".html");
-    fHelper.ReadDir(folder).forEach(md => {
+    fHelper.ReadDirName(folder).forEach(md => {
       if("md".split(',').indexOf(md.replace(/.*?\./g, "")) === -1){
         return;
       }
@@ -45,7 +45,7 @@ try {
 });
 
 // Genrate Styles
-fHelper.ReadDir('x','scss').forEach(file => {
+fHelper.ReadDirName('x','scss').forEach(file => {
   try {
     if(file.indexOf('_') > -1){
       return;

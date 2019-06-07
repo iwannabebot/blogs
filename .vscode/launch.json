@@ -8,14 +8,14 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\index.js",
+            "program": "${workspaceFolder}\\transpiled\\index.js",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
         }, {
             "type": "node",
-            "name": "Run",
             "request": "launch",
+            "name": "Run",
             "args": ["${relativeFile}"],
             "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
             "sourceMaps": true,
