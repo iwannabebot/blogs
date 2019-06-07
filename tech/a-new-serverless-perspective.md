@@ -1,6 +1,6 @@
 ---
 title: A new serverless perspective
-description: How serverless development 
+description: A new serverless perspective that changed how I started looking at services 
 image: ../images/banner/a-new-serverless-perspective.png
 published: 06/02/2019
 ---
