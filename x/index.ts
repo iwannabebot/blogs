@@ -4,6 +4,7 @@ import * as sass from "node-sass";
 const generator = new Generator();
 const fHelper = new FileHelper();
 try {
+  fHelper.Copy("CNAME", ",", "wwwroot", "CNAME");
   fHelper.Copy("robo.txt", ",", "wwwroot", "robo.txt");
 } catch(e) {
   console.log(e);
