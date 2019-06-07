@@ -1,13 +1,13 @@
 ---
 title: How I stopped worrying and started redesigning?
 description: Solution architects in this micro-services era are advocating an aversion to monolithic architectures. Here is the story with one such monolith.
-image: ../images/nilay.png
+image: ../images/banner/how-i-stopped-worrying-and-started-redesigning.jpeg
 published: 06/02/2019
 ---
 
 ## ⚡ How I stopped worrying and started redesigning?
 
-![banner](../images/banner.jpeg)
+![banner](../images/banner/how-i-stopped-worrying-and-started-redesigning.jpeg)
 
 Solution architects in this micro-services era are advocating an aversion to monolithic architectures. Which is totally justified! A monolith even if it is modularised to a very reasonable degree, resist the change needed to keep itself healthy. Even if you have some compelling arguments to choose such an architecture, be assured that with posterity accumulated [gotchas](https://www.urbandictionary.com/define.php?term=gotcha) will eventually outweigh your arguments.
 
