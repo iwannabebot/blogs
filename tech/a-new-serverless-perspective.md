@@ -5,7 +5,7 @@ image: ../images/banner/a-new-serverless-perspective.png
 published: 06/02/2019
 ---
 
-## A new serveress perspective
+## A new serverless perspective
 
 ![banner](../images/banner/a-new-serverless-perspective.png)
 
