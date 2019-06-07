@@ -35,6 +35,7 @@ try {
         return;
       }
       const meta = new Map();
+      meta.set("md_path", md);
       const content = fHelper.ReadText(folder, md);
       const converted = generator.generateFromTemplate(template, content, meta);
       fHelper.WriteText(converted, "wwwroot", folder, md.replace(".md", ".html"));
