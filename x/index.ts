@@ -28,27 +28,35 @@ try {
 
 // Markdown Folders
 ["perspective", "tech", ].forEach(folder => {
-  const template = fHelper.ReadText("view/partials/_"+folder+".html");
-  fHelper.ReadDir(folder).forEach(md => {
-    if("md".split(',').indexOf(md.replace(/.*?\./g, "")) === -1){
-      return;
-    }
-    const meta = new Map();
-    const content = fHelper.ReadText(folder, md);
-    const converted = generator.generateFromTemplate(template, content, meta);
-    fHelper.WriteText(converted, "wwwroot", folder, md.replace(".md", ".html"));
-  });
+  try {
+    const template = fHelper.ReadText("view/partials/_"+folder+".html");
+    fHelper.ReadDir(folder).forEach(md => {
+      if("md".split(',').indexOf(md.replace(/.*?\./g, "")) === -1){
+        return;
+      }
+      const meta = new Map();
+      const content = fHelper.ReadText(folder, md);
+      const converted = generator.generateFromTemplate(template, content, meta);
+      fHelper.WriteText(converted, "wwwroot", folder, md.replace(".md", ".html"));
+    });
+  } catch(e) {
+    console.err(e);
+  }
 });
 
 // Genrate Styles
 fHelper.ReadDir('x','scss').forEach(file => {
-  if(file.indexOf('_') > -1){
-    return;
+  try {
+    if(file.indexOf('_') > -1){
+      return;
+    }
+    const result = sass.renderSync({
+      file: 'x/scss/'+ file,
+      includePaths: ['scss']
+    }).css;
+    const r = String.fromCharCode.apply(null, new Uint16Array(result));
+    fHelper.WriteText(r, 'wwwroot', file.replace('.scss', '.css'));
+  } catch (e) {
+    console.err(e);
   }
-  const result = sass.renderSync({
-    file: 'x/scss/'+ file,
-    includePaths: ['scss']
-  }).css;
-  const r = String.fromCharCode.apply(null, new Uint16Array(result));
-  fHelper.WriteText(r, 'wwwroot', file.replace('.scss', '.css'));
 });
