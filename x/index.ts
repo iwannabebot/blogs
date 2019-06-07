@@ -40,7 +40,7 @@ try {
       fHelper.WriteText(converted, "wwwroot", folder, md.replace(".md", ".html"));
     });
   } catch(e) {
-    console.err(e);
+    console.error(e);
   }
 });
 
@@ -57,6 +57,6 @@ fHelper.ReadDir('x','scss').forEach(file => {
     const r = String.fromCharCode.apply(null, new Uint16Array(result));
     fHelper.WriteText(r, 'wwwroot', file.replace('.scss', '.css'));
   } catch (e) {
-    console.err(e);
+    console.error(e);
   }
 });
