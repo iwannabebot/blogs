@@ -1,7 +1,7 @@
 ---
 title: How I stopped worrying and started redesigning?
 description: Solution architects in this micro-services era are advocating an aversion to monolithic architectures. Here is the story with one such monolith.
-image: (../images/nilay.png)
+image: ../images/nilay.png
 published: 06/02/2019
 ---
 
