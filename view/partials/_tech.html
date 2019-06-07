@@ -16,8 +16,8 @@
         if (!SVGElement.prototype.contains) {
             SVGElement.prototype.contains = HTMLDivElement.prototype.contains;
         }
-        hljs.initHighlightingOnLoad();
         window.onload = function (ev) {
+            hljs.initHighlightingOnLoad();
             const pres = document.getElementsByTagName("code");
             for (let i = 0; i < pres.length; i++) {
                 if (pres[i].parentElement.tagName.toLowerCase() === "pre") {
