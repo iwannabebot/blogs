@@ -14,6 +14,10 @@ Solution architects in this micro-services era are advocating an aversion to mon
 
 *Here is the story with one such monolith.*
 
+> If you ever get to the point where exceptions are significantly hurting your performance, you have problems in terms of your use of exceptions beyond just the performance
+>
+> ~ Jon Skeet
+
 To be fair, this application was properly modularised, with a good amount of focus given on decoupling objects by their role and concerns. It was not written as bad as it has performed. In a simpler world, it could have stayed relevant for a really long time. But sadly, after a few months of it being live in production, it had to be (and is being) redesigned.
 
 The core of this application was a self-hosted Windows process with separate class libraries dedicated to different business logic and operations. Each of these operations would start on some specific time. A background thread was responsible for this scheduling. A Job factory ran each job in their own thread. Everything seemed perfect on paper. A Proof of Concept was created which showed how every part was feasible and worked.
@@ -29,7 +33,3 @@ We were using a custom implementation of .NET ThreadPool built by one of our se
 ![code_quality](https://imgs.xkcd.com/comics/code_quality_2.png)
 
 It was at this time when we realized that more fixes are not going to solve anything. The problem with this kind of application was that there were too many touch points, any of which could have result in repeated failures.
-
-> If you ever get to the point where exceptions are significantly hurting your performance, you have problems in terms of your use of exceptions beyond just the performance
->
-> ~ Jon Skeet
