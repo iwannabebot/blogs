@@ -14,7 +14,7 @@ Solution architects in this micro-services era are advocating an aversion to mon
 
 *Here is the story with one such monolith.*
 
-To be fair, this application was not as badly written as it has performed. It was properly modularised with a good amount of focus given on decoupling objects by their role and concerns. In a simpler world, it could have stayed relevant for a really long time. But sadly, after a few months of it being live in production, it has to be and is being redesigned.
+To be fair, this application was properly modularised, with a good amount of focus given on decoupling objects by their role and concerns. It was not written as bad as it has performed. In a simpler world, it could have stayed relevant for a really long time. But sadly, after a few months of it being live in production, it had to be (and is being) redesigned.
 
 The core of this application was a self-hosted Windows process with separate class libraries dedicated to different business logic and operations. Each of these operations would start on some specific time. A background thread was responsible for this scheduling. A Job factory ran each job in their own thread. Everything seemed perfect on paper. A Proof of Concept was created which showed how every part was feasible and worked.
 
