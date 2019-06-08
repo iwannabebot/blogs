@@ -1,6 +1,6 @@
 ---
-title: Help
-description: Help Document
+title: Supported Markdown Syntax
+description: Understand how to contribute in custom Markdown supported 
 published: 06/05/2019
 ---
 

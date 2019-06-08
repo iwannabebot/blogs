@@ -3,7 +3,7 @@
 
 <head>
     <title>Tech - {{ title }}</title>
-    <base href="https://www.nilayvishwakarma.com/blogs/tech/">
+    <base href="https://blogs.nilayvishwakarma.com/tech/">
     <link rel="stylesheet" href="../blogs.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,8 +16,8 @@
         if (!SVGElement.prototype.contains) {
             SVGElement.prototype.contains = HTMLDivElement.prototype.contains;
         }
-        hljs.initHighlightingOnLoad();
         window.onload = function (ev) {
+            hljs.initHighlightingOnLoad();
             const pres = document.getElementsByTagName("code");
             for (let i = 0; i < pres.length; i++) {
                 if (pres[i].parentElement.tagName.toLowerCase() === "pre") {
@@ -53,9 +53,11 @@
 <body>
     <div class="header">
         <a href="https://www.nilayvishwakarma.com"><span>@nilayvishwakarma.com</span></a>
+        <a class="right" href="./syntax.html"><span>Syntax</span></a>
     </div>
     <div class="sub-header">
-        <a class="right" href="./syntax.html"><span>Syntax</span></a>
+        <a class="right" href="https://github.com/iwannabebot/blogs/edit/master/tech/{{md_path}}"><span>IMPROVE THIS ARTICLE</span></a>
+        <a class="right" href="https://github.com/iwannabebot/blogs/issues/new"><span>REPORT AN ISSUE</span></a>
     </div>
     <div class="container">
         {{ body }}
