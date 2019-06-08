@@ -11,7 +11,9 @@ export class Generator {
     this.fHelper = new FileHelper();
     this.metaProjector = new MetaProjector();
     this.converter = new showdown.Converter({
-      extensions: [require("./extensions/highlightjs"), require("./extensions/embed-chart"), require("./extensions/alerts")],
+      extensions: [require("./extensions/highlightjs"),
+      require("./extensions/attribution"),
+      require("./extensions/alerts")],
       simplifiedAutoLink: true,
       emoji: true
     });

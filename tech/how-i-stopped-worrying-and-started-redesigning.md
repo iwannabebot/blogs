@@ -57,3 +57,5 @@ _If you are not familiar with Azure Functions I would suggest you read [this art
  - With proper IoC implementation, any operation in Functions can execute parallelly with windows service.
  - Since functions are essentially stateless, a storage queue can be used to maintain 'state' over a long-running task (ex: Durable Function).
  - Functions which throws an unhandled error, update dequeue counter of the triggering queue item. Thus, for transient errors, poison queue items can be processed separately.
+
+@[attribution="https://xkcd.com"]
