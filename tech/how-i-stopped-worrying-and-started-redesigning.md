@@ -11,7 +11,7 @@ published: 06/02/2019
 
 Solution architects in this micro-services era are advocating an aversion to monolithic architectures. Which is totally justified! A monolith even if it is modularised to a very reasonable degree, resist the change needed to keep itself healthy. Even if you have some compelling arguments to choose such an architecture, be assured that with posterity accumulated [gotchas](https://www.urbandictionary.com/define.php?term=gotcha) will eventually outweigh your arguments.
 
-*Here is the story with one such monolith.*
+*Here is a story of one such monolith*
 
 ![code_quality](https://imgs.xkcd.com/comics/code_quality_2.png)
 
@@ -35,6 +35,6 @@ Without limiting theses policies in operations it was possible, that in some of 
 
 After a long tiring week of debugging, some more concurrency issues were found. It became difficult for us to pinpoint what all changes were required to fix this system. It was at this time when we realized that more fixes are not going to solve anything. 
 
-> We had to resesign!
+> We had to redesign!
 
 @[attribution="https://xkcd.com"]

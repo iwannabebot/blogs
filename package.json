@@ -4,7 +4,9 @@
   "description": "A repository for blogs.nilayvishwakarma.com",
   "main": "transpiled/index.js",
   "scripts": {
-    "dev": "concurrently \"tsc -w\" \"nodemon\" \"live-server wwwroot\"",
+    "run": "nodemon",
+    "serve": "live-server wwwroot --port=3000",
+    "dev": "concurrently \"tsc -w\" \"npm run run\" \"npm run serve\"",
     "build": "rimraf wwwroot && rimraf transpiled && tsc && node transpiled/index.js"
   },
   "repository": {

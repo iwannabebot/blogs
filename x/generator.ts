@@ -19,6 +19,11 @@ export class Generator {
     });
   }
 
+  public getMeta(content: string): Map<string, any> {
+      const _this = this;
+      return _this.metaProjector.Get(content);
+  }
+
   public generateFromTemplate(template: string, content: string, options: Map<string, any>) {
     const _this = this;
     const meta = _this.metaProjector.Get(content);

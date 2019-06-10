@@ -1,57 +1,6 @@
-@import "colors";
-@import "fonts";
-@import "reset";
+@import "base";
 @import "highlightjs";
 @import "tippy";
-
-%h {
-  font-family: $font-title;
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-h1 {
-  @extend %h;
-  font-size: 42px;
-  font-weight: 300;
-}
-h2 {
-  @extend %h;
-  font-size: 32px;
-  font-weight: 500;
-}
-h3 {
-  @extend %h;
-  font-size: 24px;
-  font-weight: 700;
-}
-h4 {
-  @extend %h;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-%text {
-  font-family: $font-primary;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.58;
-  font-size: 20px;
-  font-weight: 300px;
-  letter-spacing: 0.001em;
-}
-
-p, li, a {
-  @extend %text;
-}
-
-a {
-  padding: 0px 3px;
-  font-size: 21px;
-  text-decoration: dotted;
-}
 
 img, canvas {
   max-width: 100%;
@@ -138,7 +87,7 @@ body {
       border-top: 4px solid $black2;
       margin: 5em auto 5em;
     }
-    a {        
+    a {
       color: $green3;
       text-decoration: dashed;
     }
@@ -151,7 +100,7 @@ body {
       margin: 30px 20px;
       text-align: justify;
       text-justify: inter-word;
-      a {        
+      a {
         color: $green3;
         text-decoration: dashed;
         color: $yellow1;
