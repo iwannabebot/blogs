@@ -28,7 +28,7 @@ try {
 // });
 
 const folders = new Map();
-const folderNames = ["perspective", "tech"];
+const folderNames = ["tech"];
 
 // Markdown Folders
 let body = "";
